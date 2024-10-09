@@ -1,5 +1,8 @@
 # DateTimeFunctions-UnrealEnginePlugin
  This is an Unreal Engine plugin that provides some functions related to Date and Time with a countdown functionality using event binding.
+Packaged and tested on Unreal Engine 5.2 on windows only but in theory it can be compiled on any other version and for any other platform.
+
+To use it, just download it on your machine as zip file then extract to your project folder: YourProjectFolder -> Plugins (if this folder doesn't exist you can create it).
 
 Features:
 
