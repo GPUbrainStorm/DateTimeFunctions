@@ -1,0 +1,24 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "DateTimeFunctions",
+	"Description": "This plugin allows easy date and time calculation with a copy of some famous time functions.",
+	"Category": "Other",
+	"CreatedBy": "Mohamad D.",
+	"CreatedByURL": "https://www.gpubrainstorm.com",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"EngineVersion": "5.2.0",
+	"CanContainContent": true,
+	"IsBetaVersion": true,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "DateTimeFunctions",
+			"Type": "Runtime",
+			"LoadingPhase": "PreLoadingScreen"
+		}
+	]
+}
