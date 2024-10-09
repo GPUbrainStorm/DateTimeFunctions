@@ -21,6 +21,6 @@ enum class FormatsOptions : uint8
 	OptionB UMETA(DisplayName = "MM/DD/YYYY"),
 	OptionC UMETA(DisplayName = "Mon,DD YYYY"),
 	OptionD UMETA(DisplayName = "DD Mon YYYY"),
-	OptionE UMETA(DisplayName = "DD Month 2024"),
+	OptionE UMETA(DisplayName = "DD Month YYYY"),
 	OptionF UMETA(DisplayName = "YYYY-MM-DD"),
 };

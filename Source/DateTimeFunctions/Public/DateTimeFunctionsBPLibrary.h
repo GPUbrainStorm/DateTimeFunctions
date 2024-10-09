@@ -47,15 +47,15 @@ class UDateTimeCountdown : public UObject
 	GENERATED_BODY()
 
 public:
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Countdown")
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "DateTimeFunctions")
 	int32 CountdownTime;
 
-	UPROPERTY(BlueprintAssignable, Category = "Countdown")
+	UPROPERTY(BlueprintAssignable, Category = "DateTimeFunctions")
 	FOnCountdownTick OnCountdownTick;
 
 	FTimerHandle CountdownTimerHandle;
 
-	UFUNCTION(BlueprintCallable, Category = "Countdown")
+	UFUNCTION(BlueprintCallable, Category = "DateTimeFunctions")
 	void StartCountdown(int32 StartTime);
 
 protected:

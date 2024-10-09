@@ -53,7 +53,7 @@ void EmptyLinkFunctionForGeneratedCodeDateTimeFunctions() {}
 		{ "OptionC.Name", "FormatsOptions::OptionC" },
 		{ "OptionD.DisplayName", "DD Mon YYYY" },
 		{ "OptionD.Name", "FormatsOptions::OptionD" },
-		{ "OptionE.DisplayName", "DD Month 2024" },
+		{ "OptionE.DisplayName", "DD Month YYYY" },
 		{ "OptionE.Name", "FormatsOptions::OptionE" },
 		{ "OptionF.DisplayName", "YYYY-MM-DD" },
 		{ "OptionF.Name", "FormatsOptions::OptionF" },
@@ -84,9 +84,9 @@ void EmptyLinkFunctionForGeneratedCodeDateTimeFunctions() {}
 		static const FEnumRegisterCompiledInInfo EnumInfo[];
 	};
 	const FEnumRegisterCompiledInInfo Z_CompiledInDeferFile_FID_DateTimeFunctions_HostProject_Plugins_DateTimeFunctions_Source_DateTimeFunctions_Public_DateTimeFunctions_h_Statics::EnumInfo[] = {
-		{ FormatsOptions_StaticEnum, TEXT("FormatsOptions"), &Z_Registration_Info_UEnum_FormatsOptions, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 2177615428U) },
+		{ FormatsOptions_StaticEnum, TEXT("FormatsOptions"), &Z_Registration_Info_UEnum_FormatsOptions, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 2621321629U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_DateTimeFunctions_HostProject_Plugins_DateTimeFunctions_Source_DateTimeFunctions_Public_DateTimeFunctions_h_1635568055(TEXT("/Script/DateTimeFunctions"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_DateTimeFunctions_HostProject_Plugins_DateTimeFunctions_Source_DateTimeFunctions_Public_DateTimeFunctions_h_1871121291(TEXT("/Script/DateTimeFunctions"),
 		nullptr, 0,
 		nullptr, 0,
 		Z_CompiledInDeferFile_FID_DateTimeFunctions_HostProject_Plugins_DateTimeFunctions_Source_DateTimeFunctions_Public_DateTimeFunctions_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_DateTimeFunctions_HostProject_Plugins_DateTimeFunctions_Source_DateTimeFunctions_Public_DateTimeFunctions_h_Statics::EnumInfo));

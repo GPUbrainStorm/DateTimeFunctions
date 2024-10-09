@@ -84,7 +84,7 @@ void EmptyLinkFunctionForGeneratedCodeDateTimeFunctionsBPLibrary() {}
 		static const UECodeGen_Private::FFunctionParams FuncParams;
 	};
 	const UECodeGen_Private::FBytePropertyParams Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_FormatDate_Statics::NewProp_Options_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
-	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_FormatDate_Statics::NewProp_Options = { "Options", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(DateTimeFunctionsBPLibrary_eventFormatDate_Parms, Options), Z_Construct_UEnum_DateTimeFunctions_FormatsOptions, METADATA_PARAMS(nullptr, 0) }; // 2177615428
+	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_FormatDate_Statics::NewProp_Options = { "Options", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(DateTimeFunctionsBPLibrary_eventFormatDate_Parms, Options), Z_Construct_UEnum_DateTimeFunctions_FormatsOptions, METADATA_PARAMS(nullptr, 0) }; // 2621321629
 	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_FormatDate_Statics::NewProp_Date = { "Date", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(DateTimeFunctionsBPLibrary_eventFormatDate_Parms, Date), Z_Construct_UScriptStruct_FDateTime, METADATA_PARAMS(nullptr, 0) };
 	const UECodeGen_Private::FStrPropertyParams Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_FormatDate_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(DateTimeFunctionsBPLibrary_eventFormatDate_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_FormatDate_Statics::PropPointers[] = {
@@ -254,7 +254,7 @@ void EmptyLinkFunctionForGeneratedCodeDateTimeFunctionsBPLibrary() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_DateTimeFunctions,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UDateTimeFunctionsBPLibrary_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_FormatDate, "FormatDate" }, // 2862101910
+		{ &Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_FormatDate, "FormatDate" }, // 3729298964
 		{ &Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_GetTimeSinceEpoch, "GetTimeSinceEpoch" }, // 3056006128
 		{ &Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_SelectTimezone, "SelectTimezone" }, // 627680513
 		{ &Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_SubDate, "SubDate" }, // 2324609042
@@ -376,7 +376,7 @@ void FOnCountdownTick_DelegateWrapper(const FMulticastScriptDelegate& OnCountdow
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UDateTimeCountdown_StartCountdown_Statics::Function_MetaDataParams[] = {
-		{ "Category", "Countdown" },
+		{ "Category", "DateTimeFunctions" },
 		{ "ModuleRelativePath", "Public/DateTimeFunctionsBPLibrary.h" },
 	};
 #endif
@@ -419,7 +419,7 @@ void FOnCountdownTick_DelegateWrapper(const FMulticastScriptDelegate& OnCountdow
 		(UObject* (*)())Z_Construct_UPackage__Script_DateTimeFunctions,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UDateTimeCountdown_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UDateTimeCountdown_StartCountdown, "StartCountdown" }, // 646062507
+		{ &Z_Construct_UFunction_UDateTimeCountdown_StartCountdown, "StartCountdown" }, // 2409842678
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UDateTimeCountdown_Statics::Class_MetaDataParams[] = {
@@ -431,14 +431,14 @@ void FOnCountdownTick_DelegateWrapper(const FMulticastScriptDelegate& OnCountdow
 #endif
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UDateTimeCountdown_Statics::NewProp_CountdownTime_MetaData[] = {
-		{ "Category", "Countdown" },
+		{ "Category", "DateTimeFunctions" },
 		{ "ModuleRelativePath", "Public/DateTimeFunctionsBPLibrary.h" },
 	};
 #endif
 	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UDateTimeCountdown_Statics::NewProp_CountdownTime = { "CountdownTime", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UDateTimeCountdown, CountdownTime), METADATA_PARAMS(Z_Construct_UClass_UDateTimeCountdown_Statics::NewProp_CountdownTime_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UDateTimeCountdown_Statics::NewProp_CountdownTime_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UDateTimeCountdown_Statics::NewProp_OnCountdownTick_MetaData[] = {
-		{ "Category", "Countdown" },
+		{ "Category", "DateTimeFunctions" },
 		{ "ModuleRelativePath", "Public/DateTimeFunctionsBPLibrary.h" },
 	};
 #endif
@@ -485,10 +485,10 @@ void FOnCountdownTick_DelegateWrapper(const FMulticastScriptDelegate& OnCountdow
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_DateTimeFunctions_HostProject_Plugins_DateTimeFunctions_Source_DateTimeFunctions_Public_DateTimeFunctionsBPLibrary_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UDateTimeFunctionsBPLibrary, UDateTimeFunctionsBPLibrary::StaticClass, TEXT("UDateTimeFunctionsBPLibrary"), &Z_Registration_Info_UClass_UDateTimeFunctionsBPLibrary, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UDateTimeFunctionsBPLibrary), 1072577007U) },
-		{ Z_Construct_UClass_UDateTimeCountdown, UDateTimeCountdown::StaticClass, TEXT("UDateTimeCountdown"), &Z_Registration_Info_UClass_UDateTimeCountdown, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UDateTimeCountdown), 3477905693U) },
+		{ Z_Construct_UClass_UDateTimeFunctionsBPLibrary, UDateTimeFunctionsBPLibrary::StaticClass, TEXT("UDateTimeFunctionsBPLibrary"), &Z_Registration_Info_UClass_UDateTimeFunctionsBPLibrary, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UDateTimeFunctionsBPLibrary), 760657452U) },
+		{ Z_Construct_UClass_UDateTimeCountdown, UDateTimeCountdown::StaticClass, TEXT("UDateTimeCountdown"), &Z_Registration_Info_UClass_UDateTimeCountdown, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UDateTimeCountdown), 443332780U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_DateTimeFunctions_HostProject_Plugins_DateTimeFunctions_Source_DateTimeFunctions_Public_DateTimeFunctionsBPLibrary_h_2135741346(TEXT("/Script/DateTimeFunctions"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_DateTimeFunctions_HostProject_Plugins_DateTimeFunctions_Source_DateTimeFunctions_Public_DateTimeFunctionsBPLibrary_h_1807477866(TEXT("/Script/DateTimeFunctions"),
 		Z_CompiledInDeferFile_FID_DateTimeFunctions_HostProject_Plugins_DateTimeFunctions_Source_DateTimeFunctions_Public_DateTimeFunctionsBPLibrary_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_DateTimeFunctions_HostProject_Plugins_DateTimeFunctions_Source_DateTimeFunctions_Public_DateTimeFunctionsBPLibrary_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
