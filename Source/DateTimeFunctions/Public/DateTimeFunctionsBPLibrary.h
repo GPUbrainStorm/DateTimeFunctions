@@ -37,6 +37,18 @@ class UDateTimeFunctionsBPLibrary : public UBlueprintFunctionLibrary
 
 	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Format Date", Keywords = "Format Date"), Category = "DateTimeFunctions|Format")
 	static FString FormatDate(FormatsOptions Options, FDateTime Date);
+
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Format Seconds", Keywords = "SecondsToClock"), Category = "DateTimeFunctions|Format")
+	static FString FormatSeconds(int Seconds, SecondsFormatsOptions Format);
+
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Hours To Seconds", Keywords = "Hours To Seconds"), Category = "DateTimeFunctions|Format")
+	static float HoursToSeconds(float Hours);
+
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Get Month Short Name", Keywords = "Month Short Name"), Category = "DateTimeFunctions|Format")
+	static FString GetMonthShortName(int MonthNumber);
+
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Get Month Full Name", Keywords = "Month Full Name"), Category = "DateTimeFunctions|Format")
+	static FString GetMonthFullName(int MonthNumber);
 };
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnCountdownTick, int32, CurrentTime);

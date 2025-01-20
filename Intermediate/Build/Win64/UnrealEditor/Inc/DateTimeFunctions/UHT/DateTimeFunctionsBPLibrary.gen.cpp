@@ -16,10 +16,44 @@ void EmptyLinkFunctionForGeneratedCodeDateTimeFunctionsBPLibrary() {}
 	DATETIMEFUNCTIONS_API UClass* Z_Construct_UClass_UDateTimeFunctionsBPLibrary();
 	DATETIMEFUNCTIONS_API UClass* Z_Construct_UClass_UDateTimeFunctionsBPLibrary_NoRegister();
 	DATETIMEFUNCTIONS_API UEnum* Z_Construct_UEnum_DateTimeFunctions_FormatsOptions();
+	DATETIMEFUNCTIONS_API UEnum* Z_Construct_UEnum_DateTimeFunctions_SecondsFormatsOptions();
 	DATETIMEFUNCTIONS_API UFunction* Z_Construct_UDelegateFunction_DateTimeFunctions_OnCountdownTick__DelegateSignature();
 	ENGINE_API UClass* Z_Construct_UClass_UBlueprintFunctionLibrary();
 	UPackage* Z_Construct_UPackage__Script_DateTimeFunctions();
 // End Cross Module References
+	DEFINE_FUNCTION(UDateTimeFunctionsBPLibrary::execGetMonthFullName)
+	{
+		P_GET_PROPERTY(FIntProperty,Z_Param_MonthNumber);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(FString*)Z_Param__Result=UDateTimeFunctionsBPLibrary::GetMonthFullName(Z_Param_MonthNumber);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(UDateTimeFunctionsBPLibrary::execGetMonthShortName)
+	{
+		P_GET_PROPERTY(FIntProperty,Z_Param_MonthNumber);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(FString*)Z_Param__Result=UDateTimeFunctionsBPLibrary::GetMonthShortName(Z_Param_MonthNumber);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(UDateTimeFunctionsBPLibrary::execHoursToSeconds)
+	{
+		P_GET_PROPERTY(FFloatProperty,Z_Param_Hours);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(float*)Z_Param__Result=UDateTimeFunctionsBPLibrary::HoursToSeconds(Z_Param_Hours);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(UDateTimeFunctionsBPLibrary::execFormatSeconds)
+	{
+		P_GET_PROPERTY(FIntProperty,Z_Param_Seconds);
+		P_GET_ENUM(SecondsFormatsOptions,Z_Param_Format);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(FString*)Z_Param__Result=UDateTimeFunctionsBPLibrary::FormatSeconds(Z_Param_Seconds,SecondsFormatsOptions(Z_Param_Format));
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(UDateTimeFunctionsBPLibrary::execFormatDate)
 	{
 		P_GET_ENUM(FormatsOptions,Z_Param_Options);
@@ -59,7 +93,11 @@ void EmptyLinkFunctionForGeneratedCodeDateTimeFunctionsBPLibrary() {}
 		UClass* Class = UDateTimeFunctionsBPLibrary::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
 			{ "FormatDate", &UDateTimeFunctionsBPLibrary::execFormatDate },
+			{ "FormatSeconds", &UDateTimeFunctionsBPLibrary::execFormatSeconds },
+			{ "GetMonthFullName", &UDateTimeFunctionsBPLibrary::execGetMonthFullName },
+			{ "GetMonthShortName", &UDateTimeFunctionsBPLibrary::execGetMonthShortName },
 			{ "GetTimeSinceEpoch", &UDateTimeFunctionsBPLibrary::execGetTimeSinceEpoch },
+			{ "HoursToSeconds", &UDateTimeFunctionsBPLibrary::execHoursToSeconds },
 			{ "SelectTimezone", &UDateTimeFunctionsBPLibrary::execSelectTimezone },
 			{ "SubDate", &UDateTimeFunctionsBPLibrary::execSubDate },
 		};
@@ -111,6 +149,130 @@ void EmptyLinkFunctionForGeneratedCodeDateTimeFunctionsBPLibrary() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_FormatSeconds_Statics
+	{
+		struct DateTimeFunctionsBPLibrary_eventFormatSeconds_Parms
+		{
+			int32 Seconds;
+			SecondsFormatsOptions Format;
+			FString ReturnValue;
+		};
+		static const UECodeGen_Private::FUnsizedIntPropertyParams NewProp_Seconds;
+		static const UECodeGen_Private::FBytePropertyParams NewProp_Format_Underlying;
+		static const UECodeGen_Private::FEnumPropertyParams NewProp_Format;
+		static const UECodeGen_Private::FStrPropertyParams NewProp_ReturnValue;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_FormatSeconds_Statics::NewProp_Seconds = { "Seconds", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(DateTimeFunctionsBPLibrary_eventFormatSeconds_Parms, Seconds), METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FBytePropertyParams Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_FormatSeconds_Statics::NewProp_Format_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_FormatSeconds_Statics::NewProp_Format = { "Format", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(DateTimeFunctionsBPLibrary_eventFormatSeconds_Parms, Format), Z_Construct_UEnum_DateTimeFunctions_SecondsFormatsOptions, METADATA_PARAMS(nullptr, 0) }; // 2444595235
+	const UECodeGen_Private::FStrPropertyParams Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_FormatSeconds_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(DateTimeFunctionsBPLibrary_eventFormatSeconds_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_FormatSeconds_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_FormatSeconds_Statics::NewProp_Seconds,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_FormatSeconds_Statics::NewProp_Format_Underlying,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_FormatSeconds_Statics::NewProp_Format,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_FormatSeconds_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_FormatSeconds_Statics::Function_MetaDataParams[] = {
+		{ "Category", "DateTimeFunctions|Format" },
+		{ "DisplayName", "Format Seconds" },
+		{ "Keywords", "SecondsToClock" },
+		{ "ModuleRelativePath", "Public/DateTimeFunctionsBPLibrary.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_FormatSeconds_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UDateTimeFunctionsBPLibrary, nullptr, "FormatSeconds", nullptr, nullptr, sizeof(Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_FormatSeconds_Statics::DateTimeFunctionsBPLibrary_eventFormatSeconds_Parms), Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_FormatSeconds_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_FormatSeconds_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04022401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_FormatSeconds_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_FormatSeconds_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_FormatSeconds()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_FormatSeconds_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_GetMonthFullName_Statics
+	{
+		struct DateTimeFunctionsBPLibrary_eventGetMonthFullName_Parms
+		{
+			int32 MonthNumber;
+			FString ReturnValue;
+		};
+		static const UECodeGen_Private::FUnsizedIntPropertyParams NewProp_MonthNumber;
+		static const UECodeGen_Private::FStrPropertyParams NewProp_ReturnValue;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_GetMonthFullName_Statics::NewProp_MonthNumber = { "MonthNumber", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(DateTimeFunctionsBPLibrary_eventGetMonthFullName_Parms, MonthNumber), METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FStrPropertyParams Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_GetMonthFullName_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(DateTimeFunctionsBPLibrary_eventGetMonthFullName_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_GetMonthFullName_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_GetMonthFullName_Statics::NewProp_MonthNumber,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_GetMonthFullName_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_GetMonthFullName_Statics::Function_MetaDataParams[] = {
+		{ "Category", "DateTimeFunctions|Format" },
+		{ "DisplayName", "Get Month Full Name" },
+		{ "Keywords", "Month Full Name" },
+		{ "ModuleRelativePath", "Public/DateTimeFunctionsBPLibrary.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_GetMonthFullName_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UDateTimeFunctionsBPLibrary, nullptr, "GetMonthFullName", nullptr, nullptr, sizeof(Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_GetMonthFullName_Statics::DateTimeFunctionsBPLibrary_eventGetMonthFullName_Parms), Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_GetMonthFullName_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_GetMonthFullName_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04022401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_GetMonthFullName_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_GetMonthFullName_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_GetMonthFullName()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_GetMonthFullName_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_GetMonthShortName_Statics
+	{
+		struct DateTimeFunctionsBPLibrary_eventGetMonthShortName_Parms
+		{
+			int32 MonthNumber;
+			FString ReturnValue;
+		};
+		static const UECodeGen_Private::FUnsizedIntPropertyParams NewProp_MonthNumber;
+		static const UECodeGen_Private::FStrPropertyParams NewProp_ReturnValue;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_GetMonthShortName_Statics::NewProp_MonthNumber = { "MonthNumber", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(DateTimeFunctionsBPLibrary_eventGetMonthShortName_Parms, MonthNumber), METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FStrPropertyParams Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_GetMonthShortName_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(DateTimeFunctionsBPLibrary_eventGetMonthShortName_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_GetMonthShortName_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_GetMonthShortName_Statics::NewProp_MonthNumber,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_GetMonthShortName_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_GetMonthShortName_Statics::Function_MetaDataParams[] = {
+		{ "Category", "DateTimeFunctions|Format" },
+		{ "DisplayName", "Get Month Short Name" },
+		{ "Keywords", "Month Short Name" },
+		{ "ModuleRelativePath", "Public/DateTimeFunctionsBPLibrary.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_GetMonthShortName_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UDateTimeFunctionsBPLibrary, nullptr, "GetMonthShortName", nullptr, nullptr, sizeof(Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_GetMonthShortName_Statics::DateTimeFunctionsBPLibrary_eventGetMonthShortName_Parms), Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_GetMonthShortName_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_GetMonthShortName_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04022401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_GetMonthShortName_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_GetMonthShortName_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_GetMonthShortName()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_GetMonthShortName_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	struct Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_GetTimeSinceEpoch_Statics
 	{
 		struct DateTimeFunctionsBPLibrary_eventGetTimeSinceEpoch_Parms
@@ -144,6 +306,45 @@ void EmptyLinkFunctionForGeneratedCodeDateTimeFunctionsBPLibrary() {}
 		if (!ReturnFunction)
 		{
 			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_GetTimeSinceEpoch_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_HoursToSeconds_Statics
+	{
+		struct DateTimeFunctionsBPLibrary_eventHoursToSeconds_Parms
+		{
+			float Hours;
+			float ReturnValue;
+		};
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_Hours;
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_ReturnValue;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_HoursToSeconds_Statics::NewProp_Hours = { "Hours", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(DateTimeFunctionsBPLibrary_eventHoursToSeconds_Parms, Hours), METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_HoursToSeconds_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(DateTimeFunctionsBPLibrary_eventHoursToSeconds_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_HoursToSeconds_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_HoursToSeconds_Statics::NewProp_Hours,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_HoursToSeconds_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_HoursToSeconds_Statics::Function_MetaDataParams[] = {
+		{ "Category", "DateTimeFunctions|Format" },
+		{ "DisplayName", "Hours To Seconds" },
+		{ "Keywords", "Hours To Seconds" },
+		{ "ModuleRelativePath", "Public/DateTimeFunctionsBPLibrary.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_HoursToSeconds_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UDateTimeFunctionsBPLibrary, nullptr, "HoursToSeconds", nullptr, nullptr, sizeof(Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_HoursToSeconds_Statics::DateTimeFunctionsBPLibrary_eventHoursToSeconds_Parms), Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_HoursToSeconds_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_HoursToSeconds_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04022401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_HoursToSeconds_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_HoursToSeconds_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_HoursToSeconds()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_HoursToSeconds_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -255,7 +456,11 @@ void EmptyLinkFunctionForGeneratedCodeDateTimeFunctionsBPLibrary() {}
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UDateTimeFunctionsBPLibrary_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_FormatDate, "FormatDate" }, // 3729298964
+		{ &Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_FormatSeconds, "FormatSeconds" }, // 2198010199
+		{ &Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_GetMonthFullName, "GetMonthFullName" }, // 3409780055
+		{ &Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_GetMonthShortName, "GetMonthShortName" }, // 3835549062
 		{ &Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_GetTimeSinceEpoch, "GetTimeSinceEpoch" }, // 3056006128
+		{ &Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_HoursToSeconds, "HoursToSeconds" }, // 2980691502
 		{ &Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_SelectTimezone, "SelectTimezone" }, // 627680513
 		{ &Z_Construct_UFunction_UDateTimeFunctionsBPLibrary_SubDate, "SubDate" }, // 2324609042
 	};
@@ -480,16 +685,16 @@ void FOnCountdownTick_DelegateWrapper(const FMulticastScriptDelegate& OnCountdow
 	UDateTimeCountdown::UDateTimeCountdown(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UDateTimeCountdown);
 	UDateTimeCountdown::~UDateTimeCountdown() {}
-	struct Z_CompiledInDeferFile_FID_DateTimeFunctions_HostProject_Plugins_DateTimeFunctions_Source_DateTimeFunctions_Public_DateTimeFunctionsBPLibrary_h_Statics
+	struct Z_CompiledInDeferFile_FID_UpdatedDateTimeFunction_HostProject_Plugins_DateTimeFunctions_Source_DateTimeFunctions_Public_DateTimeFunctionsBPLibrary_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_DateTimeFunctions_HostProject_Plugins_DateTimeFunctions_Source_DateTimeFunctions_Public_DateTimeFunctionsBPLibrary_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UDateTimeFunctionsBPLibrary, UDateTimeFunctionsBPLibrary::StaticClass, TEXT("UDateTimeFunctionsBPLibrary"), &Z_Registration_Info_UClass_UDateTimeFunctionsBPLibrary, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UDateTimeFunctionsBPLibrary), 760657452U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UpdatedDateTimeFunction_HostProject_Plugins_DateTimeFunctions_Source_DateTimeFunctions_Public_DateTimeFunctionsBPLibrary_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_UDateTimeFunctionsBPLibrary, UDateTimeFunctionsBPLibrary::StaticClass, TEXT("UDateTimeFunctionsBPLibrary"), &Z_Registration_Info_UClass_UDateTimeFunctionsBPLibrary, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UDateTimeFunctionsBPLibrary), 233424369U) },
 		{ Z_Construct_UClass_UDateTimeCountdown, UDateTimeCountdown::StaticClass, TEXT("UDateTimeCountdown"), &Z_Registration_Info_UClass_UDateTimeCountdown, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UDateTimeCountdown), 443332780U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_DateTimeFunctions_HostProject_Plugins_DateTimeFunctions_Source_DateTimeFunctions_Public_DateTimeFunctionsBPLibrary_h_1807477866(TEXT("/Script/DateTimeFunctions"),
-		Z_CompiledInDeferFile_FID_DateTimeFunctions_HostProject_Plugins_DateTimeFunctions_Source_DateTimeFunctions_Public_DateTimeFunctionsBPLibrary_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_DateTimeFunctions_HostProject_Plugins_DateTimeFunctions_Source_DateTimeFunctions_Public_DateTimeFunctionsBPLibrary_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UpdatedDateTimeFunction_HostProject_Plugins_DateTimeFunctions_Source_DateTimeFunctions_Public_DateTimeFunctionsBPLibrary_h_1061635056(TEXT("/Script/DateTimeFunctions"),
+		Z_CompiledInDeferFile_FID_UpdatedDateTimeFunction_HostProject_Plugins_DateTimeFunctions_Source_DateTimeFunctions_Public_DateTimeFunctionsBPLibrary_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UpdatedDateTimeFunction_HostProject_Plugins_DateTimeFunctions_Source_DateTimeFunctions_Public_DateTimeFunctionsBPLibrary_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

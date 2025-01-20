@@ -24,3 +24,11 @@ enum class FormatsOptions : uint8
 	OptionE UMETA(DisplayName = "DD Month YYYY"),
 	OptionF UMETA(DisplayName = "YYYY-MM-DD"),
 };
+
+UENUM(BlueprintType)
+enum class SecondsFormatsOptions : uint8
+{
+	OptionA UMETA(DisplayName = "HH:MM:SS"),
+	OptionB UMETA(DisplayName = "HH:MM"),
+	OptionC UMETA(DisplayName = "MM:SS"),
+};

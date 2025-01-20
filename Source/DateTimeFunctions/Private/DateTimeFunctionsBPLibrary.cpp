@@ -108,3 +108,52 @@ void UDateTimeCountdown::CountdownTick()
 		GetWorld()->GetTimerManager().ClearTimer(CountdownTimerHandle);
 	}
 }
+
+FString UDateTimeFunctionsBPLibrary::FormatSeconds(int Seconds, SecondsFormatsOptions Format) {
+	if (Seconds <= 0) {
+		switch (Format)
+		{
+		case SecondsFormatsOptions::OptionA:
+			return "00:00:00";
+		case SecondsFormatsOptions::OptionB:
+			return "00:00";
+		case SecondsFormatsOptions::OptionC:
+			return "00:00";
+		}
+	}
+	switch (Format) {
+
+	case SecondsFormatsOptions::OptionA:
+	{
+		int32 Hours = Seconds / 3600;
+		int32 Minutes = (Seconds % 3600) / 60;
+		int32 RemainingSeconds = Seconds % 60;
+		return FString::Printf(TEXT("%02d:%02d:%02d"), Hours, Minutes, RemainingSeconds);
+	}
+	case SecondsFormatsOptions::OptionB:
+	{
+		int32 Hours = Seconds / 3600;
+		int32 Minutes = (Seconds % 3600) / 60;
+		return FString::Printf(TEXT("%02d:%02d"), Hours, Minutes);
+	}
+	case SecondsFormatsOptions::OptionC:
+	{
+		int32 Minutes = Seconds / 60;
+		int32 RemainingSeconds = Seconds % 60;
+		return FString::Printf(TEXT("%02d:%02d"), Minutes, RemainingSeconds);
+	}
+	}
+	return "N/A";
+}
+
+float UDateTimeFunctionsBPLibrary::HoursToSeconds(float Hours) {
+	return Hours * 3600;
+}
+
+FString UDateTimeFunctionsBPLibrary::GetMonthShortName(int MonthNumber) {
+	return ::GetMonthShortName(MonthNumber);
+}
+
+FString UDateTimeFunctionsBPLibrary::GetMonthFullName(int MonthNumber) {
+	return ::GetMonthFullName(MonthNumber);
+}

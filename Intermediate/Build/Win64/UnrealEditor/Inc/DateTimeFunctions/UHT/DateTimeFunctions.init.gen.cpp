@@ -21,13 +21,13 @@ void EmptyLinkFunctionForGeneratedCodeDateTimeFunctions_init() {}
 				SingletonFuncArray,
 				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0x0A8F0508,
-				0x82C77FE9,
+				0x3E23973E,
+				0x697E89AF,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_DateTimeFunctions.OuterSingleton, PackageParams);
 		}
 		return Z_Registration_Info_UPackage__Script_DateTimeFunctions.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_DateTimeFunctions(Z_Construct_UPackage__Script_DateTimeFunctions, TEXT("/Script/DateTimeFunctions"), Z_Registration_Info_UPackage__Script_DateTimeFunctions, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x0A8F0508, 0x82C77FE9));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_DateTimeFunctions(Z_Construct_UPackage__Script_DateTimeFunctions, TEXT("/Script/DateTimeFunctions"), Z_Registration_Info_UPackage__Script_DateTimeFunctions, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x3E23973E, 0x697E89AF));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
