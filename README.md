@@ -1,32 +1,55 @@
-# DateTimeFunctions-UnrealEnginePlugin
- This is an Unreal Engine plugin that provides some functions related to Date and Time with a countdown functionality using event binding.
-Packaged and tested on Unreal Engine 5.2 on windows only but in theory it can be compiled on any other version and for any other platform.
+# DateTimeFunctions Unreal Engine Plugin
 
-To use it, just download it on your machine as zip file then extract to your project folder: YourProjectFolder -> Plugins (if this folder doesn't exist you can create it).
+This Unreal Engine plugin provides various functions related to Date and Time, including countdown functionality using event binding. 
 
-Features:
+Packaged and tested on **Unreal Engine 5.2** for **Windows**, but it can theoretically be compiled on other versions and platforms.
 
-1- DateTime operations: Unix Timestamp, Subtract Dates (Result in seconds), Get time in a selected timezone.
+## Installation
+1. Download the plugin as a ZIP file.
+2. Extract the ZIP to your project folder under the following path:
+   - `YourProjectFolder/Plugins`
+   - *(If the `Plugins` folder doesn’t exist, create it.)*
 
-2- DateTime Formating: Format any date to a selected formt. Available formats are: DD/MM/YYYY | MM/DD/YYYY | Mon,DD YYYY | DD Mon YYYY | DD Month YYYY | YYYY-MM-DD
+## Features
 
-3- Countdown functionality: Input in seconds, an event can be binded and called on every second to update the seconds. Countdown usage example:
-![image](https://github.com/user-attachments/assets/eac92f8a-e64b-4916-b6d1-94f28bd8cd0f)
+### DateTime Operations
+- **Unix Timestamp**: Returns the seconds elapsed since 01/01/1970.
+- **Subtract Dates**: Calculates the difference between two dates in seconds.
+- **Get DateTime in a Selected Timezone**: Returns the date and time of the selected timezone.
 
-All available functions:
+### DateTime Formatting
+- **Format Date**: Formats any date to one of the following options:
+  - `DD/MM/YYYY`
+  - `MM/DD/YYYY`
+  - `Mon, DD YYYY`
+  - `DD Mon YYYY`
+  - `DD Month YYYY`
+  - `YYYY-MM-DD`
+- **Format Seconds**: Converts seconds into a selected time format:
+  - `HH:MM:SS`
+  - `HH:MM`
+  - `MM:SS`
 
-Unix Timestamp: returns the seconds since 01/01/1970.
+### Countdown Functionality
+- **Countdown Timer**: Accepts input in seconds.
+  - An event can be bound and triggered every second to update the remaining time.
+  
+#### Countdown Usage Example:
+![Countdown Example](https://github.com/user-attachments/assets/e398788c-ec86-4fcb-84ad-99f73ce6e0e3)
 
-Subtract Dates: returns the seconds of 2 Dates subtraction.
+## Available Functions
 
-Get Date Time in selected timezone: returns the date and time of the selected timezone.
+### General Date and Time Functions
+1. **Unix Timestamp**: Returns the seconds since 01/01/1970.
+2. **Subtract Dates**: Returns the difference between two dates in seconds.
+3. **Get DateTime in Selected Timezone**: Returns the date and time in the specified timezone.
 
-Format Date: change the formatting of a Date to the selected format available from a list.
+### Formatting Functions
+4. **Format Date**: Formats a date to the desired format (listed above).
+5. **Format Seconds**: Formats seconds into `HH:MM:SS`, `HH:MM`, or `MM:SS`.
 
-Format Seconds: returns the seconds passed in a selected format (HH:MM:SS | HH:MM | MM:SS).
-
-Hours To Seconds: returns the number of seconds in the entered hours number (accept float: 1.5 hour returns 5400).
-
-Get Month Short Name: returns the short name of a month in English based on its number (1 returns Jan).
-
-Get Month Full Name: returns the name of the month in English based on its number (1 returns January).
+### Utility Functions
+6. **Hours to Seconds**: Converts a number of hours (accepts floats) to seconds. 
+   - Example: `1.5 hours` → `5400 seconds`
+7. **Get Month Short Name**: Returns the short name of a month (e.g., `1` → `Jan`).
+8. **Get Month Full Name**: Returns the full name of a month (e.g., `1` → `January`).
