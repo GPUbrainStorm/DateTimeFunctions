@@ -5,7 +5,7 @@ This Unreal Engine plugin provides various functions related to Date and Time, i
 Packaged and tested on **Unreal Engine 5.2** for **Windows**, but it can theoretically be compiled on other versions and platforms.
 
 ## Installation
-1. Download the plugin as a ZIP file.
+1. Download the correct version of the plugin from [release](https://github.com/GPUbrainStorm/DateTimeFunctions/releases).
 2. Extract the ZIP to your project folder under the following path:
    - `YourProjectFolder/Plugins`
    - *(If the `Plugins` folder doesn’t exist, create it.)*
