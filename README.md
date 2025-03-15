@@ -2,7 +2,7 @@
 
 This Unreal Engine plugin provides various functions related to Date and Time, including countdown functionality using event binding. 
 
-Packaged and tested on **Unreal Engine 5.2** for **Windows**, but it can theoretically be compiled on other versions and platforms.
+Packaged and tested on **Unreal Engine 5.2** and **Unreal Engine 5.4** for **Windows**, but it can theoretically be compiled on other versions and platforms.
 
 ## Installation
 1. Download the correct version of the plugin from [Releases](https://github.com/GPUbrainStorm/DateTimeFunctions/releases).
