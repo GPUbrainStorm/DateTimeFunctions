@@ -1,6 +1,7 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 #pragma once
 
+#include "TimerManager.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "DateTimeFunctionsBPLibrary.generated.h"
 
